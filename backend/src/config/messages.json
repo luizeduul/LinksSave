@@ -1,0 +1,15 @@
+{
+    "respose.json_ok":"Requisição efetuada com sucesso.",
+    "respose.json_bad_request":"Requisição inválida.",
+    "respose.json_unauthorized":"Acesso não autorizado",
+    "respose.json_not_found":"Não encontrado.",
+    "respose.json_server_error":"Erro no servidor. :(",
+    "account.signup.email_exists": "Email já cadastrado",
+    "account.signup.success": "Cadastro efetuado com sucesso",
+    "account.signup.email.string.empty": "O Campo de email é obrigatório",
+    "account.signup.email.string.email": "Email inválido",
+    "account.signup.password_confirmation.any.required": "O Campo de confirmação de senha é obrigatório",
+    "account.signup.password_confirmation.string.empty": "O Campo de confirmação de senha é obrigatório",
+    "account.signup.password.string.empty": "O Campo de senha é obrigatório",
+    "account.signup.password.string.pattern.base": "Sua senha pode ter de 3 a 30 digitos. Somente letras e números"
+}
