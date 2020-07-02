@@ -6,12 +6,17 @@ module.exports = {
   },
 
   async create(req, res) {
-    const email = 'ledulzeee@gmail.com';
-    const password = '123456';
+    const { email, password } = req.body;
+
+    const account = await Account.findOne({ where: { email } });
+    if (account) {
+      return res.jsonBadRequest(null, 'Account already exists.');
+    }
+
     const hash = bcrypt.hashSync(password, 8);
-    const result = await Account.create({email, password: hash});
-    
-    return res.json(result);
+    const newAccount = await Account.create({ email, password: hash });
+
+    return res.jsonOK(newAccount, 'Account created');
   }
 
 };
