@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const { Account } = require('../models');
 
 const { getMessage } = require('../Helpers/Validator');
-const { generateJwt, generateRefreshJwt } = require('../Helpers/Jwt');
+const { generateJwt, generateRefreshJwt, verifyRefreshJwt, getTokenFromHeaders } = require('../Helpers/Jwt');
 
 module.exports = {
   async login(req, res) {
@@ -18,6 +18,34 @@ module.exports = {
     const refreshToken = generateRefreshJwt({ id: account.id, version: account.jwtVersion });
 
     return res.jsonOK(account, getMessage('account.signin.success'), { token, refreshToken });
+  },
+
+  async refresh(req, res) {
+    const token = getTokenFromHeaders(req.headers);
+
+    if (!token) {
+      return res.jsonUnauthorized(null, 'Invalid Token');
+    }
+
+    try {
+      const decoded = verifyRefreshJwt(token);
+      const account = await Account.findByPk(decoded.id);
+      if (!account) {
+        return res.jsonUnauthorized(null, 'Invalid Token');
+      }
+      if (decoded.version !== account.jwtVersion) {
+        return res.jsonUnauthorized(null, 'Invalid Token');
+      }
+
+      const meta = {
+        token: generateJwt({ id: account.id })
+      }
+
+      return res.jsonOK(null, null, meta)
+    } catch (error) {
+      return res.jsonUnauthorized(null, 'Invalid Token');
+    }
+
   },
 
   async create(req, res) {
