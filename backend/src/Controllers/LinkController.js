@@ -4,7 +4,7 @@ const { getMessage } = require('../Helpers/Validator');
 
 module.exports = {
   async show(req, res) {
-    const accountId = 1;  //req.id;
+    const { accountId } = req;
     const { id } = req.params;
     const link = await Link.findOne({ where: { id, accountId } });
     if (!link) return res.jsonNotFound();
@@ -13,7 +13,7 @@ module.exports = {
   },
 
   async index(req, res) {
-    const accountId = 1;  //req.id;
+    const { accountId } = req;
     const links = await Link.findAll({ where: { accountId } });
     if (!links) return res.jsonNotFound();
 
@@ -21,8 +21,8 @@ module.exports = {
   },
 
   async store(req, res) {
-    const { label, url, isSocial } = req.body;
-    const accountId = 1;  //req.id;
+    const { accountId, body } = req;
+    const { label, url, isSocial } = body;
 
     const image = 'https://placehold.it/500x500?text=SEM%20TITULO';
 
@@ -37,9 +37,8 @@ module.exports = {
   },
 
   async update(req, res) {
-    const accountId = 1;  //req.id;
+    const { accountId, body } = req;
     const { id } = req.params;
-    const { body } = req;
 
     const fields = ['label', 'url', 'isSocial'];
 
@@ -61,8 +60,8 @@ module.exports = {
 
   },
 
-  async destroy(req, res){
-    const accountId = 1;  //req.id;
+  async destroy(req, res) {
+    const { accountId } = req;
     const { id } = req.params;
     const link = await Link.findOne({ where: { id, accountId } });
     if (!link) return res.jsonNotFound();
