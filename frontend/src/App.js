@@ -1,10 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Routes from './Routes';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 function App() {
   return (
-    <h1>Oiiiii</h1>
+    <>
+      <Header />
+      <Routes />
+      <Footer />
+    </>
   );
 }
 
