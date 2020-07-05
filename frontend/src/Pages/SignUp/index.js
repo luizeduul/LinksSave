@@ -4,9 +4,9 @@ import './styles.css';
 
 export default function SignUp() {
   return (
-    <div className="container">
+    <div className="signup-container">
       <h2>Cadastre-se</h2>
-      <div className="content">
+      <div className="signup-content">
         <form>
           <div className="form-group">
             <label>Email</label>

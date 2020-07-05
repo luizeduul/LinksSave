@@ -4,9 +4,9 @@ import './styles.css';
 
 export default function SignIn() {
   return (
-    <div className="container">
+    <div className="signin-container">
       <h2>Login</h2>
-      <div className="content">
+      <div className="signin-content">
         <form>
           <div className="form-group">
             <label>Email</label>

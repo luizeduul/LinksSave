@@ -1,21 +1,22 @@
-.container {
+.signup-container {
     display: flex;
+    flex-direction: column;
     margin-top: 20vh;
 }
 
-.container h2{
+.signup-container h2{
     padding-left: 5vw;
     font-family: Roboto, sans-serif;
     font-weight: 200;
 }
 
-.content {
+.signup-content {
     padding: 20px 20px;
     height: 33vh;
     width: 100%; 
 }
 
-.content .form-group {
+.signup-content .form-group {
     padding: 1vh 0;
 }
 
@@ -28,7 +29,7 @@
 }
 
 
-.content .button-signup{
+.signup-content .button-signup{
     width: 30vw;
     height: 6vh;
     margin-top: 20px;
