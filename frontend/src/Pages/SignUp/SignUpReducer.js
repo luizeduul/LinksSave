@@ -1,4 +1,4 @@
-import { SIGN_IN } from './SignInActions';
+import { SIGN_UP } from './SignUpActions';
 
 const initialState = {
   account: null,
@@ -7,8 +7,8 @@ const initialState = {
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case SIGN_IN:
-      return { ...initialState, account: { ...payload, success: true } }
+    case SIGN_UP:
+      return { ...initialState, account: {...payload, success: true} }
 
     default:
       return state;

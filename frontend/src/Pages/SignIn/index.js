@@ -7,7 +7,6 @@ import './styles.css';
 
 function SignIn({ account, signIn }) {
 
-
   function handleSubmit(event) {
     event.preventDefault();
 
