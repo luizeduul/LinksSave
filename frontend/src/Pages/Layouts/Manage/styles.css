@@ -4,7 +4,7 @@
     background-color: rgba(21, 9, 65, 0.233);
 }
 
-.nav-container {
+.nav-container{
     display: flex;
     width: 100%;
     justify-content: space-evenly;
@@ -13,4 +13,14 @@
     color: rgb(252, 10, 38);
     font-size: 18px;
     font-weight: 500;
+}
+
+.buttonExit{
+    text-transform: uppercase;
+    color: rgb(252, 10, 38);
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

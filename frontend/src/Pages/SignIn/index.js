@@ -1,19 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import { signIn } from './SignInActions'
+import { signIn } from '../../Actions/AccountActions'
 
 import './styles.css';
 
 function SignIn({ account, signIn }) {
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    signIn({ email: 'ledulz@gmail.com', password: '123456'});
+  if(account){
+    return <Redirect to="/manage/links" />
   }
 
-  console.log("**** SignIn.account", account);
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    signIn(data);
+  }
 
   return (
     <div className="signin-container">
@@ -51,8 +55,8 @@ function SignIn({ account, signIn }) {
 
 const mapStateToProps = (state) => {
   return {
-    account: state.signIn.account
-  }
+    account: state.account.account
+  };
 }
 
 export default connect(mapStateToProps, { signIn })(SignIn);
