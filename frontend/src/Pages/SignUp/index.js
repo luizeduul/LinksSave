@@ -1,11 +1,12 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { signUp } from './SignUpActions'
 
 import './styles.css';
 
-function SignUp({ account, signUp }) {
+function SignUp({ signUp, account }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,6 +17,10 @@ function SignUp({ account, signUp }) {
 
     signUp(data);
   };
+
+  if(account){
+    return <Redirect to="/manage/links" />
+  }
 
   return (
     <div className="signup-container">
