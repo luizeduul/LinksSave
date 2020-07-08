@@ -60,7 +60,6 @@ const mapStateToProps = (state) => {
   return {
     links: state.link.links,
     linkToRemove: state.link.linkToRemove,
-
   };
 }
 

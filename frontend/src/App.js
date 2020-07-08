@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 
+
+
 import { initAccount } from './Actions/AccountActions';
 
 
