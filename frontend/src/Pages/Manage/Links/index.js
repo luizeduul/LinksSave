@@ -3,14 +3,17 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Layout from '../../Layouts/Manage';
-import { linkList } from '../../../Actions/LinkActions';
+import { linkList, setLinkToRemove, linkRemove } from '../../../Actions/LinkActions';
 
 import './styles.css';
 
-function Links({ links, linkList }) {
+function Links({ links, linkRemove, linkToRemove, linkList, setLinkToRemove }) {
   useEffect(() => {
     linkList();
   }, [linkList]);
+
+
+  const confirmDelete = (event) => (linkToRemove ? linkRemove(linkToRemove) : null)
 
   return (
     <Layout>
@@ -22,27 +25,32 @@ function Links({ links, linkList }) {
           </Link>
         </div>
         {links && links.length
-          ? links.map(link => (
-            <div className="links-section" key={link.id}>
-              <div className="img">
-                <img src="https://placehold.it/100x100?text=SEM%20TITULO" alt="link icon" />
-              </div>
-              <div className="links group-labels">
-                <span>{link.label}</span>
-                <span>{link.url}</span>
-              </div>
-              <div className="links buttonActions">
-                <Link to={`/manage/links/edit/${link.id}`}>
-                  Edit
+          ? links.map(link => {
+            //const deleteClick = (event) => setLinkToRemove(link);
+
+            return (
+              <div className="links-section" key={link.id}>
+                <div className="img">
+                  <img src="https://placehold.it/100x100?text=SEM%20TITULO" alt="link icon" />
+                </div>
+                <div className="links group-labels">
+                  <span>{link.label}</span>
+                  <span>{link.url}</span>
+                </div>
+                <div className="links buttonActions">
+                  <Link to={`/manage/links/edit/${link.id}`}>
+                    Edit
                 </Link>
-                <Link to={`/manage/links/delete/${link.id}`}>
-                  Delete
-                </Link>
+                  <button className="buttonDelete" onClick={() => {}}>
+                    Delete
+                </button>
+                </div>
               </div>
-            </div>
-          ))
+            )
+          })
           : null
         }
+
       </div>
     </Layout>
   );
@@ -50,8 +58,10 @@ function Links({ links, linkList }) {
 
 const mapStateToProps = (state) => {
   return {
-    links: state.link.links
+    links: state.link.links,
+    linkToRemove: state.link.linkToRemove,
+
   };
 }
 
-export default connect(mapStateToProps, { linkList })(Links)
+export default connect(mapStateToProps, { linkList, setLinkToRemove, linkRemove })(Links)

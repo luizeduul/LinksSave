@@ -1,4 +1,10 @@
-import { LINK_CREATE, LINK_LIST, LINK_GET } from '../Actions/LinkActions';
+import { 
+  LINK_CREATE, 
+  LINK_LIST, 
+  LINK_GET, 
+  LINK_UPDATE, 
+  LINK_TO_REMOVE 
+} from '../Actions/LinkActions';
 
 const initialState = {
   link: null,
@@ -9,6 +15,12 @@ export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case LINK_CREATE: {
+      const response = payload ? payload.data : null;
+      const link = response ? response.data : null;
+
+      return { ...state, link }
+    }
+    case LINK_UPDATE: {
       const response = payload ? payload.data : null;
       const link = response ? response.data : null;
 
@@ -25,6 +37,9 @@ export default function (state = initialState, action) {
       const link = response ? response.data : null;
 
       return { ...state, link }
+    }
+    case LINK_TO_REMOVE: {
+      return { ...state, linkToRemove: payload }
     }
 
     default: {
