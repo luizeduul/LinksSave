@@ -17,7 +17,6 @@ function Create({ link, linkCreate }) {
   if(link){
     return <Redirect to="/manage/links" />
   }
-  console.log("****link ", link)
   return (
     <Layout>
       <div className="signin-container">

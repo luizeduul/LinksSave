@@ -23,7 +23,7 @@ function Links({ links, linkList }) {
         </div>
         {links && links.length
           ? links.map(link => (
-            <div className="links-section" key={link.key}>
+            <div className="links-section" key={link.id}>
               <div className="img">
                 <img src="https://placehold.it/100x100?text=SEM%20TITULO" alt="link icon" />
               </div>
@@ -32,8 +32,12 @@ function Links({ links, linkList }) {
                 <span>{link.url}</span>
               </div>
               <div className="links buttonActions">
-                <span>Edit</span>
-                <span>Delete</span>
+                <Link to={`/manage/links/edit/${link.id}`}>
+                  Edit
+                </Link>
+                <Link to={`/manage/links/delete/${link.id}`}>
+                  Delete
+                </Link>
               </div>
             </div>
           ))

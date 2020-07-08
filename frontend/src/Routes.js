@@ -16,7 +16,7 @@ export default function Routes() {
         <Route path="/sign-up" component={SignUp} />
         <Route path="/manage/links" exact component={Links} />
         <Route path="/manage/links/create" component={CreateLinks} />
-        <Route path="/manage/links/edit" component={EditLinks} />
+        <Route path="/manage/links/edit/:id" component={EditLinks} />
       </Switch>
     </BrowserRouter>
   );
