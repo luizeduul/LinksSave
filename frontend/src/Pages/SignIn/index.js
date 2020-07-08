@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+import { getFormData } from '../../Helpers/form';
 import { signIn } from '../../Actions/AccountActions'
 
 import './styles.css';
@@ -14,8 +15,7 @@ function SignIn({ account, signIn }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
+    const data = getFormData(event);
     signIn(data);
   }
 

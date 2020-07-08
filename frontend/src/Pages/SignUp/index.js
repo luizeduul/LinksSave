@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { signUp } from '../../Actions/AccountActions';
+import { getFormData } from '../../Helpers/form';
 
 import './styles.css';
 
@@ -10,11 +11,7 @@ function SignUp({ signUp, account }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-
-    console.log("signup submit*******", data);
-
+    const data = getFormData(event);
     signUp(data);
   };
 
