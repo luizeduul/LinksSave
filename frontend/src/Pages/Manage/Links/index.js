@@ -1,35 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import Layout from '../../Layouts/Manage'
+import Layout from '../../Layouts/Manage';
+import { linkList } from '../../../Actions/LinkActions';
 
 import './styles.css';
 
-const links = [
-  {
-    key: 1,
-    label: 'Instagram',
-    url: 'https://instagram.com/'
-  },
-  {
-    key: 2,
-    label: 'Meu site',
-    url: 'https://meusite.com.br/'
-  },
-  {
-    key: 3,
-    label: 'twitter',
-    url: 'https://twitter.com/'
-  },
-  {
-    key: 4,
-    label: 'Facebook',
-    url: 'https://facebook.com/'
-  },
+function Links({ links, linkList }) {
+  useEffect(() => {
+    linkList();
+  }, [linkList]);
 
-]
-
-export default function Links() {
   return (
     <Layout>
       <div className="links-container">
@@ -39,23 +21,33 @@ export default function Links() {
             Add
           </Link>
         </div>
-        {links.map(link => (
-          <div className="links-section" key={link.key}>
-            <div className="img">
-              <img src="https://placehold.it/100x100?text=SEM%20TITULO" alt="link icon" />
+        {links && links.length
+          ? links.map(link => (
+            <div className="links-section" key={link.key}>
+              <div className="img">
+                <img src="https://placehold.it/100x100?text=SEM%20TITULO" alt="link icon" />
+              </div>
+              <div className="links group-labels">
+                <span>{link.label}</span>
+                <span>{link.url}</span>
+              </div>
+              <div className="links buttonActions">
+                <span>Edit</span>
+                <span>Delete</span>
+              </div>
             </div>
-            <div className="links group-labels">
-              <span>{link.label}</span>
-              <span>{link.url}</span>
-            </div>
-            <div className="links buttonActions">
-              <span>Edit</span>
-              <span>Delete</span>
-            </div>
-          </div>
-        ))}
+          ))
+          : null
+        }
       </div>
     </Layout>
   );
 }
 
+const mapStateToProps = (state) => {
+  return {
+    links: state.link.links
+  };
+}
+
+export default connect(mapStateToProps, { linkList })(Links)
