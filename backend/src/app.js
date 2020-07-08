@@ -8,10 +8,10 @@ const checkJwt = require('./Middlewares/Jwt');
 
 const app = express();
 
+app.use(cors());
 app.use(response);
 app.use(checkJwt);
 
-app.use(cors());
  
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
