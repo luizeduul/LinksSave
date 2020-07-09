@@ -28,7 +28,7 @@
 <p>Abrir as pastas abaixo e fazer as instalações de acordo com as instruções que estão nos arquivos readme das pastas abaixo</p><br>
 <p>
   <a href="https://github.com/luizeduul/LinksSave/tree/master/backend" target="_blank" rel="noopener noreferrer">Backend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/luizeduul/LinksSave/tree/master/frontend" target="_blank" rel="noopener noreferrer">Frontend</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/luizeduul/LinksSave/tree/master/frontend" target="_blank" rel="noopener noreferrer">Frontend</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 <p>Lembre-se de ajustar os endereços de ip para o da sua máquina local.</p>
