@@ -8,8 +8,8 @@ import FormGroup from '../../../../Components/FormGroup';
 import FormCheck from '../../../../Components/FormCheck';
 import { linkGet, linkUpdate } from '../../../../Actions/LinkActions';
 
-import './styles.css';
-
+import '../linksCommonStyles.css';
+import '../../../../global.css';
 
 function Edit({ link, linkGet, linkUpdate }) {
   const { id } = useParams();
@@ -26,28 +26,30 @@ function Edit({ link, linkGet, linkUpdate }) {
 
   return (
     <Layout>
-      <div className="signin-container">
+      <div className="link-container">
         <h2>Editar Link</h2>
-        <div className="signin-content">
+        <div className="link-content">
           <form onSubmit={handleSubmit}>
             <FormGroup
-              className="input-email"
-              label="Label"
+              className="input-label"
+              label="Descrição"
               name="label"
               data={link}
               type="text"
             />
             <FormGroup
-              className="input-email"
-              label="url"
+              className="input-label"
+              label="Url do site"
               name="url"
               data={link}
               type="text"
             />
-            <FormCheck label="isSocial?" name="isSocial" data={link} />
-            <div>
-              <button className="button-login">Salvar</button>
-              <button type="button" className="button-login">Cancelar</button>
+            <FormCheck label="Rede Social?" name="isSocial" data={link} />
+            <div className="button-actions">
+              <button>Salvar</button>
+              <button>
+                <Link to="/manage/links" id="btnBack">Cancelar</Link>
+              </button>
             </div>
           </form>
         </div>

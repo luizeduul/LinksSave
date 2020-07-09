@@ -21,33 +21,41 @@
     padding-top: 8px;
 }
 
+.buttonDelete {
+    border: none;
+    color: crimson;
+    background-color: transparent;
+}
+
+.button-actionsLink{
+    display: flex;
+    flex-direction: row;
+}
+
 .links-section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: left;
     justify-content: space-between;
     padding: 2px 3px;
+    
 }
 
 .links-section .img img{
     padding-right: 20px;
     width: 80px;
-    
 }
 
-.links-section .links.group-labels {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+.links-section .group-labelsLink {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
 }
 
-.links-section .links.buttonActions {
+.links-section .button-actionsLink {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: auto;
     padding: 2px;
-}
-
-.links-section .links.links.buttonActions span{
-    margin-right: 0;
 }

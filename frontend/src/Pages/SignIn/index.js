@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { getFormData } from '../../Helpers/form';
 import { signIn } from '../../Actions/AccountActions'
 
-import './styles.css';
+import '../commonStyles.css';
 
 function SignIn({ account, signIn }) {
 
@@ -20,9 +20,9 @@ function SignIn({ account, signIn }) {
   }
 
   return (
-    <div className="signin-container">
+    <div className="sign-container">
       <h2>Login</h2>
-      <div className="signin-content">
+      <div className="sign-content">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Email</label>
@@ -45,7 +45,7 @@ function SignIn({ account, signIn }) {
             />
           </div>
           <div>
-            <button className="button-login">Login</button>
+            <button className="button-sign">Login</button>
           </div>
         </form>
       </div>

@@ -1,0 +1,20 @@
+.content .form-group {
+    padding: 1vh 0;
+}
+
+.form-group label{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Roboto;
+}
+
+.form-group .input-email, 
+.form-group .input-password,
+.form-group .input-LinkLabel,
+.form-group .input-LinkUrl {
+    width: 100%;
+    height: 8vh;
+    border-radius: 6px;
+    background-color: rgba(255, 230, 204, 0.911);
+    margin-bottom: 2vh;
+}

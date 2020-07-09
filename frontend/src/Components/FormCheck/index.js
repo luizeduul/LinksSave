@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-//import './styles.css';
-
 export default function FormCheck(props) {
   const { data, name, label } = props;
   const [isChecked, setIsChecked] = useState(null);

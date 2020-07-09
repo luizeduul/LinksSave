@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { signUp } from '../../Actions/AccountActions';
 import { getFormData } from '../../Helpers/form';
 
-import './styles.css';
+import '../commonStyles.css';
 
 function SignUp({ signUp, account }) {
 
@@ -20,9 +20,9 @@ function SignUp({ signUp, account }) {
   }
 
   return (
-    <div className="signup-container">
+    <div className="sign-container">
       <h2>Cadastre-se</h2>
-      <div className="signup-content">
+      <div className="sign-content">
         <form method="Post" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Email</label>
@@ -55,7 +55,7 @@ function SignUp({ signUp, account }) {
             />
           </div>
           <div>
-            <button className="button-signup">Cadastrar</button>
+            <button className="button-sign">Cadastrar</button>
           </div>
         </form>
       </div>

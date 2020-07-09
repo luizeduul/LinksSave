@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {FaEdit } from 'react-icons/fa';
+import {AiFillDelete } from 'react-icons/ai';
 
-import Layout from '../../Layouts/Manage';
 import { linkList, setLinkToRemove, linkRemove } from '../../../Actions/LinkActions';
+import Layout from '../../Layouts/Manage';
 
 import './styles.css';
 
@@ -29,21 +31,21 @@ function Links({ links, linkRemove, linkToRemove, linkList, setLinkToRemove }) {
             //const deleteClick = (event) => setLinkToRemove(link);
 
             return (
-              <div className="links-section" key={link.id}>
-                <div className="img">
+              <div className="links-section" >
+                <div className="img" key={link.id}>
                   <img src="https://placehold.it/100x100?text=SEM%20TITULO" alt="link icon" />
                 </div>
-                <div className="links group-labels">
+                <div className="group-labelsLink">
                   <span>{link.label}</span>
                   <span>{link.url}</span>
                 </div>
-                <div className="links buttonActions">
+                <div className="button-actionsLink">
                   <Link to={`/manage/links/edit/${link.id}`}>
-                    Edit
-                </Link>
+                    <FaEdit size={20}/>
+                  </Link>
                   <button className="buttonDelete" onClick={() => {}}>
-                    Delete
-                </button>
+                    <AiFillDelete size={20}/>
+                  </button>
                 </div>
               </div>
             )

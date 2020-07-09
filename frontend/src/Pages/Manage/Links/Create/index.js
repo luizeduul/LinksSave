@@ -1,11 +1,12 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getFormData } from '../../../../Helpers/form';
 import { linkCreate } from '../../../../Actions/LinkActions'
 import Layout from '../../../Layouts/Manage';
 
-import './styles.css';
+import '../../../../global.css';
+import '../linksCommonStyles.css';
 
 function Create({ link, linkCreate }) {
   function handleSubmit(event) {
@@ -14,19 +15,19 @@ function Create({ link, linkCreate }) {
     linkCreate(data);
   }
 
-  if(link){
+  if (link) {
     return <Redirect to="/manage/links" />
   }
   return (
     <Layout>
-      <div className="signin-container">
+      <div className="link-container">
         <h2>Cadastrar Link</h2>
-        <div className="signin-content">
+        <div className="link-content">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Label</label>
               <input
-                className="input-email"
+                className="input-LinkLabel"
                 type="text"
                 name="label"
                 id="email"
@@ -36,7 +37,7 @@ function Create({ link, linkCreate }) {
             <div className="form-group">
               <label>Url</label>
               <input
-                className="input-password"
+                className="input-LinkUrl"
                 type="text"
                 name="url"
                 id="url"
@@ -50,8 +51,11 @@ function Create({ link, linkCreate }) {
                 Rede social?
               </label>
             </div>
-            <div>
-              <button className="button-login">Salvar</button>
+            <div className="button-actions">
+              <button>Salvar</button>
+              <button>
+                <Link to="/manage/links" id="btnBack">Cancelar</Link>
+              </button>
             </div>
           </form>
         </div>
