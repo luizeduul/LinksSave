@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { FiLogOut } from 'react-icons/fi'
 
 import { signOut } from '../../../Actions/AccountActions';
 
@@ -8,7 +9,7 @@ import './styles.css';
 
 function Layout({ children, signOut, account }) {
 
-  if(!account){
+  if (!account) {
     return <Redirect to="/sign-in" />
   }
 
@@ -16,20 +17,14 @@ function Layout({ children, signOut, account }) {
     event.preventDefault();
     signOut();
   }
-  
+
   return (
     <div className="layout">
       <nav className="navbar">
         <div className="nav-container">
-          <div>
-            <span>Voltar</span>
-          </div>
-          <div>
-            <strong>Links</strong>
-          </div>
-          <div>
-            <button className="buttonExit" onClick={handleSignOut}>Sair</button>
-          </div>
+          <button className="buttonExit" onClick={handleSignOut}>
+            Sair <FiLogOut size={30} />
+          </button>
         </div>
       </nav>
       <div className="content-child">{children}</div>
