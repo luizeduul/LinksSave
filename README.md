@@ -9,7 +9,7 @@
  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 <p>Projeto desenvolvido durante a Maratona JS, do <a href="https://www.youtube.com/channel/UC29n3f6JhwqtD-kCJi_BwoA">Youtube: Emerson Broga Dev</a></p>
-<p>Vejam também o .<a href="https://www.instagram.com/emersonbrogadev/">Instagram</a> dele.</p>
+<p>Vejam também o <a href="https://www.instagram.com/emersonbrogadev/">Instagram</a> dele.</p>
 
 ## Índice
 - [Descrição](#descrição)
@@ -20,7 +20,7 @@
 ---
 
 ## Descrição
-
+Comming soon
 ---
 
 ## Como utilizar 
@@ -32,8 +32,6 @@
 </p>
 
 <p>Lembre-se de ajustar os endereços de ip para o da sua máquina local.</p>
-<h2>Descrição</h2>
-<p>Comming soon</p>
 
 ---
 
