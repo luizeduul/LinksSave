@@ -8,7 +8,7 @@
  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/luizeduul/LinksSave">
  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
-<p>Projeto desenvolvido durante a Maratona JS, do <a href="https://www.youtube.com/channel/UC29n3f6JhwqtD-kCJi_BwoA">Youtube: Emerson Broga Dev</a></p>
+<p>Projeto desenvolvido durante a Maratona JS, do Youtube: <a href="https://www.youtube.com/channel/UC29n3f6JhwqtD-kCJi_BwoA">Emerson Broga Dev</a></p>
 <p>Vejam também o <a href="https://www.instagram.com/emersonbrogadev/">Instagram</a> dele.</p>
 
 ## Índice
